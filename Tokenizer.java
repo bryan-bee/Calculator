@@ -59,43 +59,35 @@ public class Tokenizer {
         while (state != STATE_END) {
             Character ch = nextChar();
             switch (state) {
-                case STATE_START:
-                    // Check for the end of the expression string.
+                case STATE_START:                 
                     if (ch == null) {
                         token = null;
                         nextState = STATE_END;
 
-                        // Is this a double literal?
                     } else if (Character.isDigit(ch) || ch == '.') {
                         buffer.append(ch);
                         nextState = STATE_DOUBLE;
 
-                        // Is this the addition operator?
                     } else if (ch == '+') {
                         token = new AddOperator();
                         nextState = STATE_END;
 
-                        // Is this the subtraction operator?
                     } else if (ch == '-') {
                         token = new SubOperator();
                         nextState = STATE_END;
 
-                        // Is this the multiplication operator?
                     } else if (ch == '*') {
                         token = new MultOperator();
                         nextState = STATE_END;
 
-                        // Is this the division operator?
                     } else if (ch == '/') {
                         token = new DivOperator();
                         nextState = STATE_END;
 
-                        // Is this a left parenthesis?
                     } else if (ch == '(') {
                         token = new LeftParen();
                         nextState = STATE_END;
 
-                        // Is this a right parenthesis?
                     } else if (ch == ')') {
                         token = new RightParen();
                         nextState = STATE_END;
@@ -104,7 +96,6 @@ public class Tokenizer {
 
                 // We are scanning the characters of a double literal.
                 case STATE_DOUBLE:
-                    // Have we reached the end of the expression string?
                     if (ch == null) {
                         nextState = STATE_END;
 
