@@ -1,16 +1,3 @@
-//********************************************************************************************************
-// CLASS: Parenthesis (Parenthesis.java)
-//
-// COURSE AND PROJECT INFO
-// CSE205 Object Oriented Programming and Data Structures, Spring 2021
-// Project Number: 4
-// Team Name: gg
-// AUTHOR:
-// Bryan Bee, bbee2, bbee2@asu.edu
-// Camille Wolf, ceswan, ceswan@asu.edu
-// Anthony Passetti, apassett, apassett@asu.edu
-//********************************************************************************************************
-
 /**
  * Parenthesis is the superclass of LeftParen and RightParen. These are treated as a weird sort of Operator
  * because we need to be able to push LeftParens on the operator stack when evaluating the expression.
