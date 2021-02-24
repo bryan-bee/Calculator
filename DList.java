@@ -64,8 +64,6 @@ public class DList<E> {
         if (pIndex < 0 || pIndex > getSize()) {
             throw new IndexOutOfBoundsException();
         }
-
-        // Are we appending?
         if (pIndex == getSize()) {
             // Create a new Node storing pData. The mNext reference is initialized to null because
             // the new Node will become the tail Node of the DList and the mNext reference of the
@@ -147,7 +145,6 @@ public class DList<E> {
 
     /**
      * Returns the element at index pIndex.
-     *
      * Thows IndexOutOfBoundsException if pIndex < 0 or pIndex >= mSize.
      */
     public E get(int pIndex) throws IndexOutOfBoundsException {
@@ -227,12 +224,10 @@ public class DList<E> {
     public E remove(int pIndex) throws IndexOutOfBoundsException {
         Node<E> node = getNodeAt(pIndex);
 
-        // Are we removing the only element in a list with one element?
         if (getSize() == 1) {
             setHead(null);
             setTail(null);
         } // Else are we removing the head node in a list with more than one element (note: we will
-        // not get here if the list has only one element)?
         else if (pIndex == 0) {
             // Change the prev reference of the next node to null because the next node will now
             // be the head node in the list.
@@ -242,7 +237,6 @@ public class DList<E> {
             // next node succeeding the one that was just removed.
             setHead(node.getNext());
         } // Else are we removing the tail node in a list with more than one element (note: we will
-        // not get here if the list has only one element)?
         else if (pIndex == getSize() - 1) {
             // Change the next reference of the previous node to null because the previous node will
             // now be the tail node in the list.
@@ -314,19 +308,7 @@ public class DList<E> {
         return string;
     }
 
-    //**********************************************************************************************
-    // Static Nested Class: Node
-    //**********************************************************************************************
-    /**
-     * The data for each element of the DList is stored in a Node object. A Node
-     * object contains three instance variables: (1) mData is a reference to the
-     * data stored in the Node; (2) mNext is a reference to the succeeding Node
-     * in the DList; and (3) mPrev is a reference to the preceding Node in the
-     * DList.
-     *
-     * Note that Node is declared as protected so it is not visible to other
-     * classes but it is accessible to subclasses of DList.
-     */
+    
     protected static class Node<E> {
 
         /**
