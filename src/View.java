@@ -4,6 +4,7 @@ import java.awt.event.*;
 
 public class View extends JFrame implements ActionListener,KeyListener{
     //hiiiii
+    //where is this
     private static int width = 420;
     private static int height = 575;
     //instantiating the objects needed
