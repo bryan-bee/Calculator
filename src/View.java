@@ -11,7 +11,7 @@ public class View extends JFrame implements ActionListener,KeyListener{
     private Main mMain;
     JTextPane inputArea;
     JTextPane outputArea;
-    JButton[] numberButtons = new JButton[16];
+    JButton[] numberButtons = new JButton[16];git remo
     JButton[] functionButtons = new JButton[4];
     Font myFont = new Font("Ink Free",Font.BOLD,35);
     Font smallFont = new Font("Ink Free", Font.BOLD, 15);
